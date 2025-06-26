@@ -893,7 +893,7 @@ const handleCommand = (e: React.FormEvent) => {
         </div>
         <div className="absolute bottom-2 right-4 mt-2 ">
           <a
-            href="https://t.me/yourusername"
+            href="https://t.me/Basusalee"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs text-[#39FF14]/70 hover:text-[#39FF14] transition-colors duration-300 bg-black/50 border border-[#39FF14]/30 rounded px-3 py-2 hover:border-[#39FF14] hover:shadow-[0_0_10px_#39FF14]"
