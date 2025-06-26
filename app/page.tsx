@@ -46,6 +46,57 @@ export default function GundamMemeLanding() {
     return () => clearInterval(interval)
   }, [])
 
+  const timelineData = [
+    {
+      year: "1979",
+      series: "Mobile Suit Gundam",
+      model: "RX-78-2",
+      subtitle: "THE ORIGINAL",
+      color: "#39FF14",
+      imageId: "rx-78-2-gundam"
+    },
+    {
+      year: "1985",
+      series: "Zeta Gundam",
+      model: "MSZ-006",
+      subtitle: "TRANSFORMABLE",
+      color: "#00AEEF",
+      imageId: "zeta-gundam"
+    },
+    {
+      year: "1995",
+      series: "Gundam Wing",
+      model: "XXXG-01W",
+      subtitle: "WING ZERO",
+      color: "#FF3B3B",
+      imageId: "wing-zero-gundam"
+    },
+    {
+      year: "2007",
+      series: "Gundam 00",
+      model: "GN-0000",
+      subtitle: "00 RAISER",
+      color: "#39FF14",
+      imageId: "00-raiser-gundam"
+    },
+    {
+      year: "2010",
+      series: "Unicorn Gundam",
+      model: "RX-0",
+      subtitle: "UNICORN",
+      color: "#00AEEF",
+      imageId: "unicorn-gundam"
+    },
+    {
+      year: "2022",
+      series: "Witch from Mercury",
+      model: "XVX-016",
+      subtitle: "AERIAL",
+      color: "#FF3B3B",
+      imageId: "aerial-gundam"
+    }
+  ];
+
   const generateASCII = async (prompt: string) => {
     setIsGenerating(true)
 
@@ -261,6 +312,8 @@ const handleCommand = (e: React.FormEvent) => {
     setCurrentCommand("");
   }
 };
+  const [copied, setCopied] = useState(false)
+
 // ...existing code...
   return (
     <div className="min-h-screen bg-[#0A0F0D] text-[#39FF14] font-mono relative overflow-hidden">
@@ -278,8 +331,30 @@ const handleCommand = (e: React.FormEvent) => {
             <h1 className="text-4xl md:text-7xl font-bold mb-4 text-[#00AEEF] tracking-wider">
               GUNDAM<span className="text-[#FF3B3B]">CTO</span>
             </h1>
-            <p className="text-lg md:text-2xl mb-2 text-[#39FF14]">{">"} MOBILE SUIT MEME PROTOCOL ACTIVATED</p>
             <p className="text-sm opacity-80">The most based mecha token in the metaverse</p>
+            <p className="text-lg md:text-2xl mb-2 text-[#39FF14]">{">"} MOBILE SUIT MEME PROTOCOL ACTIVATED</p>
+            
+            {/* Token Address with Copy Button */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span
+                className="bg-black/80 border border-[#39FF14]/40 rounded px-3 py-2 text-[#00AEEF] font-mono text-xs md:text-base select-all tracking-wider"
+                title="Click copy to copy full address"
+              >
+                7c21xTnF...********...Z3pCbonk
+              </span>
+              <Button
+                type="button"
+                className="bg-[#39FF14]/10 border border-[#39FF14]/40 hover:bg-[#39FF14]/30 text-[#39FF14] px-2 py-1 rounded transition-colors duration-200 text-xs font-bold cursor-pointer"
+                onClick={() => {
+                  navigator.clipboard.writeText("7c21xTnFy2CH4Td13JbDvPtFHnKqpbsM4Pw5Z3pCbonk");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 1500);
+                }}
+                aria-label="Copy token address"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </Button>
+            </div>
           </div>
 
           {/* Terminal Console */}
@@ -603,253 +678,144 @@ const handleCommand = (e: React.FormEvent) => {
 
       <section className="py-16 px-4 bg-gradient-to-b from-black/20 to-black/40 relative overflow-hidden">
         {/* Starfield Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full animate-pulse delay-100"></div>
-          <div className="absolute top-40 left-1/4 w-1 h-1 bg-white rounded-full animate-pulse delay-200"></div>
-          <div className="absolute top-60 right-1/3 w-1 h-1 bg-white rounded-full animate-pulse delay-300"></div>
-          <div className="absolute bottom-20 left-1/2 w-1 h-1 bg-white rounded-full animate-pulse delay-500"></div>
-          <div className="absolute bottom-40 right-10 w-1 h-1 bg-white rounded-full animate-pulse delay-700"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#00AEEF] mb-12 text-center font-mecha tracking-wider">
-            {">"} GUNDAM THROUGH THE AGES
-          </h2>
-
-          {/* Timeline Container */}
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#39FF14] via-[#00AEEF] to-[#FF3B3B] transform -translate-y-1/2 hidden md:block"></div>
-
-            {/* Timeline Items */}
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-4">
-              {/* 1979 - Original Gundam */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#39FF14] rounded-lg p-4 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#39FF14] mb-1">1979</div>
-                    <div className="text-sm text-gray-300">Mobile Suit Gundam</div>
-                  </div>
-
-                  <div className="bg-black border border-[#39FF14]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#39FF14] text-xs leading-tight">
-                      {`    ▄▄▄
-   █▀▀▀█
-   █ ◉ █
-   █▄▄▄█
-    ███
-   █████
-  ███████
-   █████
-    ███
-   █   █
-  ██   ██`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>RX-78-2</div>
-                    <div className="text-[#39FF14]">THE ORIGINAL</div>
-                  </div>
-                </div>
-
-                {/* Timeline Dot */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#39FF14] rounded-full border-2 border-black shadow-[0_0_10px_#39FF14] hidden md:block"></div>
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-4">
+          {/* 1979 - Original Gundam */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#39FF14] rounded-lg p-4 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#39FF14] mb-1">1979</div>
+                <div className="text-sm text-gray-300">Mobile Suit Gundam</div>
               </div>
-
-              {/* 1985 - Zeta Gundam */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#00AEEF] rounded-lg p-4 hover:border-[#00AEEF] hover:shadow-[0_0_20px_#00AEEF] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#00AEEF] mb-1">1985</div>
-                    <div className="text-sm text-gray-300">Zeta Gundam</div>
-                  </div>
-
-                  <div className="bg-black border border-[#00AEEF]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#00AEEF] text-xs leading-tight">
-                      {`   ▲▲▲
-  ▲▀▀▀▲
-  █ ◉ █
-  █▄▄▄█
-   ███
-  █████
- ███████
-  █████
- ▲█████▲
- █  █  █
-██  █  ██`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>MSZ-006</div>
-                    <div className="text-[#00AEEF]">TRANSFORMABLE</div>
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#00AEEF] rounded-full border-2 border-black shadow-[0_0_10px_#00AEEF] hidden md:block"></div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="/images/gundam/rx-78.png"
+                  alt="RX-78-2 Gundam"
+                  className="h-40 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
               </div>
-
-              {/* 1995 - Gundam Wing */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#FF3B3B] rounded-lg p-4 hover:border-[#FF3B3B] hover:shadow-[0_0_20px_#FF3B3B] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#FF3B3B] mb-1">1995</div>
-                    <div className="text-sm text-gray-300">Gundam Wing</div>
-                  </div>
-
-                  <div className="bg-black border border-[#FF3B3B]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#FF3B3B] text-xs leading-tight">
-                      {`  ▄█▀▀▀█▄
- ▄█ ◉ ◉ █▄
- ██▄▄▄▄▄██
-  ███████
- ▄███████▄
-▄█████████▄
- ▀███████▀
-  ▀█████▀
-   █████
-  ██   ██
- ███   ███`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>XXXG-01W</div>
-                    <div className="text-[#FF3B3B]">WING ZERO</div>
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF3B3B] rounded-full border-2 border-black shadow-[0_0_10px_#FF3B3B] hidden md:block"></div>
-              </div>
-
-              {/* 2007 - Gundam 00 */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#39FF14] rounded-lg p-4 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#39FF14] mb-1">2007</div>
-                    <div className="text-sm text-gray-300">Gundam 00</div>
-                  </div>
-
-                  <div className="bg-black border border-[#39FF14]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#39FF14] text-xs leading-tight">
-                      {`   ▄███▄
-  ▄█▀▀▀█▄
-  █ ◉ ◉ █
-  █▄▄█▄▄█
-   █████
-  ███████
- █████████
-  ███████
-   █████
-  ▄█████▄
- ██  █  ██`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>GN-0000</div>
-                    <div className="text-[#39FF14]">00 RAISER</div>
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#39FF14] rounded-full border-2 border-black shadow-[0_0_10px_#39FF14] hidden md:block"></div>
-              </div>
-
-              {/* 2010 - Unicorn */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#00AEEF] rounded-lg p-4 hover:border-[#00AEEF] hover:shadow-[0_0_20px_#00AEEF] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#00AEEF] mb-1">2010</div>
-                    <div className="text-sm text-gray-300">Unicorn Gundam</div>
-                  </div>
-
-                  <div className="bg-black border border-[#00AEEF]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#00AEEF] text-xs leading-tight">
-                      {`    ▲
-   ▲█▲
-  ▄███▄
- ▄█▀▀▀█▄
- █ ◉ ◉ █
- █▄▄▄▄▄█
-  ███████
- █████████
-  ███████
-   █████
-  ██   ██`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>RX-0</div>
-                    <div className="text-[#00AEEF]">UNICORN</div>
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#00AEEF] rounded-full border-2 border-black shadow-[0_0_10px_#00AEEF] hidden md:block"></div>
-              </div>
-
-              {/* 2022 - Witch from Mercury */}
-              <div className="group relative">
-                <div className="bg-black/90 border-2 border-[#FF3B3B] rounded-lg p-4 hover:border-[#FF3B3B] hover:shadow-[0_0_20px_#FF3B3B] transition-all duration-300 transform hover:scale-105">
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-[#FF3B3B] mb-1">2022</div>
-                    <div className="text-sm text-gray-300">Witch from Mercury</div>
-                  </div>
-
-                  <div className="bg-black border border-[#FF3B3B]/30 rounded p-2 mb-3 h-32 flex items-center justify-center">
-                    <pre className="text-[#FF3B3B] text-xs leading-tight">
-                      {`  ▄▄███▄▄
- ▄█▀▀▀▀▀█▄
- █ ◉   ◉ █
- █▄▄▄█▄▄▄█
-  ███████
- █████████
-▄█████████▄
- ▀███████▀
-  ▀█████▀
-  ██   ██
- ███   ███`}
-                    </pre>
-                  </div>
-
-                  <div className="text-xs text-gray-400 text-center">
-                    <div>XVX-016</div>
-                    <div className="text-[#FF3B3B]">AERIAL</div>
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF3B3B] rounded-full border-2 border-black shadow-[0_0_10px_#FF3B3B] hidden md:block"></div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>RX-78-2</div>
+                <div className="text-[#39FF14]">THE ORIGINAL</div>
               </div>
             </div>
+            {/* Timeline Dot */}
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#39FF14] rounded-full border-2 border-black shadow-[0_0_10px_#39FF14] hidden md:block"></div> */}
           </div>
 
-          {/* Timeline Stats */}
-          <div className="mt-12 text-center">
-            <div className="bg-black/80 border border-[#39FF14] rounded-lg p-6 max-w-2xl mx-auto">
-              <div className="grid grid-cols-3 gap-4 text-sm">
-                <div>
-                  <div className="text-2xl font-bold text-[#39FF14]">45+</div>
-                  <div className="text-gray-300">Years of Evolution</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-[#00AEEF]">50+</div>
-                  <div className="text-gray-300">Series & Movies</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-[#FF3B3B]">∞</div>
-                  <div className="text-gray-300">Meme Potential</div>
-                </div>
+          {/* 1985 - Zeta Gundam */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#00AEEF] rounded-lg p-4 hover:border-[#00AEEF] hover:shadow-[0_0_20px_#00AEEF] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#00AEEF] mb-1">1985</div>
+                <div className="text-sm text-gray-300">Zeta Gundam</div>
+              </div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="images/gundam/MSZ-006.png"
+                  alt="Zeta Gundam"
+                  className="h-28 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>MSZ-006</div>
+                <div className="text-[#00AEEF]">TRANSFORMABLE</div>
               </div>
             </div>
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#00AEEF] rounded-full border-2 border-black shadow-[0_0_10px_#00AEEF] hidden md:block"></div> */}
           </div>
 
-          {/* Mobile Navigation Hint */}
-          <div className="mt-8 text-center md:hidden">
-            <p className="text-xs text-gray-400">
-              {"<"} Swipe to explore timeline {">"}
-            </p>
+          {/* 1995 - Gundam Wing */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#FF3B3B] rounded-lg p-4 hover:border-[#FF3B3B] hover:shadow-[0_0_20px_#FF3B3B] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#FF3B3B] mb-1">1995</div>
+                <div className="text-sm text-gray-300">Gundam Wing</div>
+              </div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="images/gundam/XXXG-01W.png"
+                  alt="Gundam Wing"
+                  className="h-28 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>XXXG-01W</div>
+                <div className="text-[#FF3B3B]">WING ZERO</div>
+              </div>
+            </div>
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF3B3B] rounded-full border-2 border-black shadow-[0_0_10px_#FF3B3B] hidden md:block"></div> */}
+          </div>
+
+          {/* 2007 - Gundam 00 */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#39FF14] rounded-lg p-4 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#39FF14] mb-1">2007</div>
+                <div className="text-sm text-gray-300">Gundam 00</div>
+              </div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="images/gundam/GN-0000.png"
+                  alt="Gundam 00"
+                  className="h-28 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>GN-0000</div>
+                <div className="text-[#39FF14]">00 RAISER</div>
+              </div>
+            </div>
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#39FF14] rounded-full border-2 border-black shadow-[0_0_10px_#39FF14] hidden md:block"></div> */}
+          </div>
+
+          {/* 2010 - Unicorn */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#00AEEF] rounded-lg p-4 hover:border-[#00AEEF] hover:shadow-[0_0_20px_#00AEEF] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#00AEEF] mb-1">2010</div>
+                <div className="text-sm text-gray-300">Unicorn Gundam</div>
+              </div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="images/gundam/RX-0.png"
+                  alt="Unicorn Gundam"
+                  className="h-28 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>RX-0</div>
+                <div className="text-[#00AEEF]">UNICORN</div>
+              </div>
+            </div>
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#00AEEF] rounded-full border-2 border-black shadow-[0_0_10px_#00AEEF] hidden md:block"></div> */}
+          </div>
+
+          {/* 2025 - Witch from Mercury */}
+          <div className="group relative">
+            <div className="bg-black/90 border-2 border-[#FF3B3B] rounded-lg p-4 hover:border-[#FF3B3B] hover:shadow-[0_0_20px_#FF3B3B] transition-all duration-300 transform hover:scale-105">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-[#FF3B3B] mb-1">2025</div>
+                <div className="text-sm text-gray-300">Witch from Mercury</div>
+              </div>
+              <div className="flex items-center justify-center mb-3 h-32">
+                <img
+                  src="images/gundam/XVX-016.png"
+                  alt="Witch from Mercury"
+                  className="h-28 w-auto object-contain mx-auto rounded shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-xs text-gray-400 text-center">
+                <div>XVX-016</div>
+                <div className="text-[#FF3B3B]">AERIAL</div>
+              </div>
+            </div>
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF3B3B] rounded-full border-2 border-black shadow-[0_0_10px_#FF3B3B] hidden md:block"></div> */}
           </div>
         </div>
       </section>
@@ -906,7 +872,7 @@ const handleCommand = (e: React.FormEvent) => {
         <h2 className="text-2xl md:text-4xl font-bold text-[#00AEEF] mb-8">READY TO PILOT YOUR MECHA?</h2>
 
         <a
-          href="https://letsbonk.fun/token/7c21xTnFy2CH4Td13JbDvPtFHnKqpbsM4Pw5Z3pCbonk"
+          href="https://dexscreener.com/solana/5pslunueafs5bhlvcrraetrygv37zfmvkk7kn5zmd7op"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center bg-[#FF3B3B] hover:bg-[#FF3B3B]/80 text-white text-xl px-8 py-4 border-2 border-[#FF3B3B] shadow-[0_0_20px_#FF3B3B] hover:shadow-[0_0_30px_#FF3B3B] transition-all duration-300 rounded cursor-pointer"
@@ -922,8 +888,8 @@ const handleCommand = (e: React.FormEvent) => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-[#39FF14]/30">
         <div className="max-w-4xl mx-auto text-center text-xs opacity-60 mb-2">
-          <p>© 2024 GUNDAMMEME | Not financial advice | DYOR | May contain traces of hopium</p>
-          <p className="mt-2">Built by degens, for degens | Powered by memes and dreams</p>
+          <p>© 2025 GUNDAM | Not financial advice | DYOR | May contain traces of hopium</p>
+          <p className="mt-2">Built by degens, for degens | Powered by bonk.fun</p>
         </div>
         <div className="absolute bottom-2 right-4 mt-2 ">
           <a
@@ -933,7 +899,7 @@ const handleCommand = (e: React.FormEvent) => {
             className="flex items-center gap-2 text-xs text-[#39FF14]/70 hover:text-[#39FF14] transition-colors duration-300 bg-black/50 border border-[#39FF14]/30 rounded px-3 py-2 hover:border-[#39FF14] hover:shadow-[0_0_10px_#39FF14]"
           >
             <Terminal size={12} />
-            <span>Made by @Basusali</span>
+            <span>Made by @Basusalee</span>
           </a>
         </div>
       </footer>
