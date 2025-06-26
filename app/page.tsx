@@ -343,7 +343,7 @@ const handleCommand = (e: React.FormEvent) => {
       <section className="py-4 sm:py-8 px-2 sm:px-4 border-t border-[#39FF14]/30">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          <Card className="bg-black/90 border-[#00AEEF] border-2 p-3 sm:p-4">
+          <Card className="bg-black/90 border-[#00AEEF] border-2 p-3 sm:p-4 hover:border-[#00AEEF] hover:shadow-[0_0_20px_#00AEEF] transition-all duration-300 transform hover:scale-105">
             <div className="text-center mb-3 sm:mb-4">
               <h3 className="text-base sm:text-lg font-bold text-[#00AEEF] mb-2">RX-78-2 GUNDAM</h3>
             </div>
@@ -393,7 +393,7 @@ const handleCommand = (e: React.FormEvent) => {
             </div>
           </Card>
 
-          <Card className="bg-black/90 border-[#FF3B3B] border-2 p-3 sm:p-4">
+          <Card className="bg-black/90 border-[#FF3B3B] border-2 p-3 sm:p-4 hover:shadow-[0_0_20px_#FF3B3B] transition-all duration-300 transform hover:scale-105">
             <div className="text-center mb-3 sm:mb-4">
               <h3 className="text-base sm:text-lg font-bold text-[#FF3B3B] mb-2">BARBATOS LUPUS</h3>
             </div>
@@ -433,7 +433,7 @@ const handleCommand = (e: React.FormEvent) => {
             </div>
           </Card>
 
-          <Card className="bg-black/90 border-[#39FF14] border-2 p-3 sm:p-4 md:col-span-2 lg:col-span-1">
+          <Card className="bg-black/90 border-[#39FF14] border-2 p-3 sm:p-4 md:col-span-2 lg:col-span-1 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
             <div className="text-center mb-3 sm:mb-4">
               <h3 className="text-base sm:text-lg font-bold text-[#39FF14] mb-2">STRIKE FREEDOM</h3>
             </div>
