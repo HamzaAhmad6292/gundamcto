@@ -340,7 +340,7 @@ const handleCommand = (e: React.FormEvent) => {
                 className="bg-black/80 border border-[#39FF14]/40 rounded px-3 py-2 text-[#00AEEF] font-mono text-xs md:text-base select-all tracking-wider"
                 title="Click copy to copy full address"
               >
-                7c21xTnF...********...Z3pCbonk
+              7c21xTnFy2CH4Td13JbDvPtFHnKqpbsM4Pw5Z3pCbonk
               </span>
               <Button
                 type="button"
