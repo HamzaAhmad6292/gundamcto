@@ -583,8 +583,8 @@ const handleCommand = (e: React.FormEvent) => {
             {">"} ./tokenomics.exe --display
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-black/80 border-[#39FF14] border-2 p-6">
+          <div className="grid md:grid-cols-1 gap-8">
+            {/* <Card className="bg-black/80 border-[#39FF14] border-2 p-6">
               <h3 className="text-xl font-bold text-[#FF3B3B] mb-4 flex items-center">
                 <Target className="mr-2" size={20} />
                 SUPPLY ALLOCATION
@@ -607,7 +607,7 @@ const handleCommand = (e: React.FormEvent) => {
                   <span className="text-[#39FF14]">10%</span>
                 </div>
               </div>
-            </Card>
+            </Card> */}
 
             <Card className="bg-black/80 border-[#00AEEF] border-2 p-6">
               <h3 className="text-xl font-bold text-[#FF3B3B] mb-4 flex items-center">
