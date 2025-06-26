@@ -548,7 +548,7 @@ const handleCommand = (e: React.FormEvent) => {
                   <span className="text-[#00AEEF]">SOL</span>
                 </div>
                 <div className="flex justify-between">
-                  <span> (Beam Rifle Efficiency)</span>
+                  <span>Tax (Beam Rifle Efficiency)</span>
                   <span className="text-[#00AEEF]">0% (Based)</span>
                 </div>
                 <div className="flex justify-between">
