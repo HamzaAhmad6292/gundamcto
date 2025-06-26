@@ -436,11 +436,12 @@ const handleCommand = (e: React.FormEvent) => {
           <Card className="bg-black/90 border-[#39FF14] border-2 p-3 sm:p-4 md:col-span-2 lg:col-span-1 hover:border-[#39FF14] hover:shadow-[0_0_20px_#39FF14] transition-all duration-300 transform hover:scale-105">
             <div className="text-center mb-3 sm:mb-4">
               <h3 className="text-base sm:text-lg font-bold text-[#39FF14] mb-2">STRIKE FREEDOM</h3>
+
             </div>
             <div className="relative h-48 sm:h-64 mb-3 sm:mb-4 overflow-hidden rounded border border-[#39FF14]/30 bg-black p-2 sm:p-4">
               <pre className="text-[#39FF14] text-[8px] sm:text-xs leading-tight overflow-hidden">
                 {`   
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣦⣍⠙⠻⢿⡏⠾⠿⢸⡿⠿⠛⣩⣴⣿⣿⣿⣿⣿⣿⣿⣿
