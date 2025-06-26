@@ -541,14 +541,14 @@ const handleCommand = (e: React.FormEvent) => {
               <div className="space-y-3 text-sm text-gray-300">
                 <div className="flex justify-between">
                   <span>Total Supply (Mobile Suits)</span>
-                  <span className="text-[#00AEEF]">1,000,000,000</span>
+                  <span className="text-[#00AEEF]">999,719,633.201</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Network (Earth Federation)</span>
-                  <span className="text-[#00AEEF]">Ethereum</span>
+                  <span className="text-[#00AEEF]">SOL</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Tax (Beam Rifle Efficiency)</span>
+                  <span> (Beam Rifle Efficiency)</span>
                   <span className="text-[#00AEEF]">0% (Based)</span>
                 </div>
                 <div className="flex justify-between">
